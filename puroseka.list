@@ -11,7 +11,7 @@ DOMAIN,sf16-static.i18n-pglstatp.com
 DOMAIN,ssdk-sg.pangle.io
 ;台服
 DOMAIN-KEYWORD,bytegsdk
-DOMAIN-KEYWORD,bytedgame
+DOMAIN-KEYWORD,sg.bytedgame
 DOMAIN-KEYWORD,cloudflare
 DOMAIN,config.uca.cloud.unity3d.com
 DOMAIN,ms.applovin.com
