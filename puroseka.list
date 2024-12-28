@@ -1,12 +1,12 @@
 ;日服
-DOMAIN-KEYWORD,sekai.colorfulpalette
+DOMAIN-KEYWORD,sekai
 DOMAIN-KEYWORD,sgsnssdk
+DOMAIN-KEYWORD,applovin
 DOMAIN,game-version.sekai.colorfulpalette.org
 DOMAIN,config.uca.cloud.unity3d.com
 DOMAIN,production-game-api.sekai.colorfulpalette.org
 DOMAIN,d.applovin.com
 DOMAIN,cdn2.inner-active.mobi
-DOMAIN,rt.applovin.com
 DOMAIN,sf16-static.i18n-pglstatp.com
 DOMAIN,ssdk-sg.pangle.io
 ;台服
