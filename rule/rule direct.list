@@ -5,3 +5,4 @@ DOMAIN-KEYWORD,satroki
 SRC-IP-CIDR,192.168.50.10/32
 SRC-IP-CIDR,192.168.50.11/32
 DOMAIN,www.feisuxun.com
+DOMAIN,greasyfork.org
