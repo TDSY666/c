@@ -1,12 +1,12 @@
 SRC-IP-CIDR,192.168.50.10/32
 SRC-IP-CIDR,192.168.50.11/32
 DOMAIN-KEYWORD,bc.googleusercontent.com
+DOMAIN-KEYWORD,api.lltskb.com
 DOMAIN-KEYWORD,nvidia
 DOMAIN-KEYWORD,mikuclub
 DOMAIN-KEYWORD,satroki
 DOMAIN,www.feisuxun.com
 DOMAIN,greasyfork.org
-DOMAIN,api.lltskb.com
 DOMAIN,www.betasmart.tech
 DOMAIN-KEYWORD,mojidict
 DOMAIN,www.skyend.work
