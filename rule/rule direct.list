@@ -1,4 +1,3 @@
-# NAME: TDSY Direct
 SRC-IP-CIDR,192.168.50.10/32
 SRC-IP-CIDR,192.168.50.11/32
 DOMAIN-KEYWORD,bc.googleusercontent.com
