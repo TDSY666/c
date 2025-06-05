@@ -1,0 +1,216 @@
+# 机场订阅
+proxy-providers:
+  HongXingYun:
+    url: "https://hongxing.one/hxvip?token=bb5e2e1ac8433c41a3c298d8926cc540"
+    type: http
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: Direct
+    override:
+      udp: true
+  STT:
+    url: "https://sttsub.top/link/Qw37bWzcJQRaOAwj?clash=1"
+    type: http
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: Direct
+    override:
+      udp: true
+
+
+
+# 节点信息
+proxies:
+  - {name: Direct, type: direct}
+  - {name: 🇯🇵 日本自用, server: 191.96.29.223, port: 46058, type: vless, uuid: 42ba204f-734c-4ce9-bc5a-10d5b0002623, tls: true, flow: xtls-rprx-vision, skip-cert-verify: true, reality-opts: {public-key: UtL7E0Gmxj3X5JdcPAutpTRKo7K2hugkR0vwk2XroUM}, servername: gen-media.co.jp, client-fingerprint: chrome, network: tcp, udp: true}
+ 
+
+# 全局配置 
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+bind-address: "*"
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+log-level: Error
+find-process-mode: 'off'
+# interface-name: en0
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+disable-keep-alive: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 控制面板
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: "/etc/mihomo/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - "+.v2ex.com"
+  skip-domain:
+    - "+.baidu.com"
+
+# 入站  
+tun:
+  enable: true
+  # system/gvisor/mixed
+  stack: mixed
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# DNS模块
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "time.*.com"
+  default-nameserver:
+    - 223.5.5.5
+  proxy-server-nameserver:
+    - https://223.5.5.5/dns-query
+  # namesever尽量用运营商提供的DNS
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 202.102.152.3
+ 
+# 出站策略
+pr: &pr {type: select, proxies: [🚀 手动选择, 🎯 全球直连, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇭🇰 香港手动, 🇯🇵 日本手动, 🇺🇸 美国手动, 🇸🇬 新加坡手动, 🇹🇼 台湾手动, 🌐 其他地区, 🚀 手动节点, 🕊️ 便宜节点]}
+proxy-groups:
+  - {name: 🚀 手动选择, type: select, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇭🇰 香港手动, 🇯🇵 日本手动, 🇺🇸 美国手动, 🇸🇬 新加坡手动, 🇹🇼 台湾手动, 🌐 其他地区, 🚀 手动节点, 🕊️ 便宜节点]}
+  - {name: 🇭🇰 香港手动, type: select, include-all: true, filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong|深港"}
+  - {name: 🇯🇵 日本手动, type: select, include-all: true, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
+  - {name: 🇺🇸 美国手动, type: select, include-all: true, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约"}
+  - {name: 🇸🇬 新加坡手动, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
+  - {name: 🇹🇼 台湾手动, type: select, include-all: true, filter: "(?i)台|新北|彰化|TW|Taiwan"}
+  - {name: 🚀 GitHub, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/GitHub.png"}
+  - {name: 🌐 社交媒体, <<: *pr}
+  - {name: 📢 谷歌FCM, <<: *pr}
+  - {name: 🇬 谷歌服务, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Google.png"}
+  - {name: 📹 YouTube, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/YouTube.png"}
+  - {name: 🎮 游戏平台, <<: *pr}
+  - {name: 🎮 Steam, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Steam.png"}
+  - {name: 💬 即时通讯, <<: *pr}
+  - {name: 🎶 TikTok, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Douyin.png"}
+  - {name: 🛒 国外电商, <<: *pr}
+  - {name: 🎻 Spotify, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Spotify.png"}
+  - {name: 🎮 プロセか, <<: *pr}
+  - {name: 🎥 ABEMA, type: select, include-all: true, proxies: [🚀 手动选择, 🎯 全球直连, 🇯🇵 日本节点, 🇯🇵 日本手动, 🚀 手动节点], filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
+  - {name: 🐟 漏网之鱼, <<: *pr}
+  - {name: 🎥 流媒体, <<: *pr}
+  - {name: 🌎 国外媒体, <<: *pr}
+  - {name: 🤖 AI服务, type: select, include-all: true, exclude-filter: "牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐"}
+  - {name: 📺 Bahamut, type: select, proxies: [🚀 手动选择, 🎯 全球直连, 🇹🇼 台湾节点, 🇹🇼 台湾手动, 🚀 手动节点], icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Bahamut.png"}
+  - {name: 🚀 测速工具, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/SpeedTest.png"}
+  - {name: 🤖 Copilot, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Bing.png"}
+  - {name: 🍎 苹果服务, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Apple.png"}
+  - {name: Ⓜ️ 微软服务, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Microsoft.png"}
+  - {name: 🇭🇰 香港节点, type: fallback, interval: 60, lazy: false, proxies: [🇭🇰 香港手动, 🇭🇰 香港智选]}
+  - {name: 🇯🇵 日本节点, type: fallback, interval: 60, lazy: false, proxies: [🇯🇵 日本手动, 🇯🇵 日本智选]}
+  - {name: 🇺🇸 美国节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约"}
+  - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
+  - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)台|新北|彰化|TW|Taiwan"}
+  - {name: 🕊️ 便宜节点, type: select, include-all: true, filter: "(?i)0.5|0.5倍|0.5x|0.1|0.2|0.3|0.4|0.6|0.7|0.8|0.9"}
+  - {name: 🌐 其他地区, type: select, include-all: true, exclude-filter: "香港|HK|Hong Kong|🇭🇰|HongKong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|台|新北|彰化|TW|Taiwan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约|牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐"}
+  - {name: 🚀 手动节点, type: select, include-all: true}
+  - {name: 🇯🇵 日本智选, type: smart, include-all: true, collectdata: true, hidden: true, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
+  - {name: 🇭🇰 香港智选, type: smart, include-all: true, collectdata: true, hidden: true, filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong|深港"}
+  - {name: 🎯 全球直连, type: select, proxies: [Direct], hidden: true}
+
+# 规则匹配
+rules:
+  - RULE-SET,TDSY%20Direct,🎯 全球直连
+  - RULE-SET,puroseka,🎮 プロセか
+  - GEOSITE,private,🎯 全球直连
+  - GEOIP,private,🎯 全球直连,no-resolve
+  - RULE-SET,Custom_Direct,🎯 全球直连
+  - RULE-SET,Custom_Proxy,🚀 手动选择
+  - GEOSITE,google-cn,🎯 全球直连
+  - GEOSITE,category-games@cn,🎯 全球直连
+  - RULE-SET,Steam_CDN,🎯 全球直连
+  - GEOSITE,category-game-platforms-download,🎯 全球直连
+  - GEOSITE,category-public-tracker,🎯 全球直连
+  - GEOSITE,category-communication,💬 即时通讯
+  - GEOSITE,category-social-media-!cn,🌐 社交媒体
+  - GEOSITE,openai,🤖 AI服务
+  - GEOSITE,bing,🤖 Copilot
+  - GEOSITE,category-ai-!cn,🤖 AI服务
+  - GEOSITE,github,🚀 GitHub
+  - GEOSITE,category-speedtest,🚀 测速工具
+  - GEOSITE,youtube,📹 YouTube
+  - GEOSITE,apple-tvplus,🎥 流媒体
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
+  - GEOSITE,googlefcm,📢 谷歌FCM
+  - GEOSITE,google,🇬 谷歌服务
+  - GEOSITE,tiktok,🎶 TikTok
+  - RULE-SET,ABEMA,🎥 ABEMA
+  - GEOSITE,netflix,🎥 流媒体
+  - GEOSITE,disney,🎥 流媒体
+  - GEOSITE,hbo,🎥 流媒体
+  - GEOSITE,primevideo,🎥 流媒体
+  - GEOSITE,category-emby,🎥 流媒体
+  - GEOSITE,spotify,🎻 Spotify
+  - GEOSITE,bahamut,📺 Bahamut
+  - GEOSITE,steam,🎮 Steam
+  - GEOSITE,category-games,🎮 游戏平台
+  - GEOSITE,category-entertainment,🌎 国外媒体
+  - GEOSITE,category-ecommerce,🛒 国外电商
+  - GEOSITE,gfw,🚀 手动选择
+  - GEOIP,telegram,💬 即时通讯,no-resolve
+  - GEOIP,twitter,🌐 社交媒体,no-resolve
+  - GEOIP,facebook,🌐 社交媒体,no-resolve
+  - GEOIP,google,🇬 谷歌服务,no-resolve
+  - GEOIP,netflix,🎥 流媒体,no-resolve
+  - GEOSITE,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
+
+
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers:
+  TDSY%20Direct: { <<: *class, url: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/rule/TDSY%20Direct.list"}
+  puroseka: { <<: *class, url: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/rule/puroseka.list"}
+  Custom_Direct: { <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Custom_Direct.list"}
+  Custom_Proxy: { <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Custom_Proxy.list"}
+  Steam_CDN: { <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Steam_CDN.list"}
+  ABEMA: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geosite/abema.mrs"}
