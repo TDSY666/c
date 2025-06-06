@@ -1,6 +1,6 @@
 # 机场订阅
 proxy-providers:
-  HongXingYun:
+  红杏云:
     url: "https://hongxing.one/hxvip?token=bb5e2e1ac8433c41a3c298d8926cc540"
     type: http
     interval: 43200
@@ -22,8 +22,7 @@ proxy-providers:
     proxy: Direct
     override:
       udp: true
-
-
+  
 
 # 节点信息
 proxies:
@@ -118,34 +117,33 @@ proxy-groups:
   - {name: 🇺🇸 美国手动, type: select, include-all: true, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约"}
   - {name: 🇸🇬 新加坡手动, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
   - {name: 🇹🇼 台湾手动, type: select, include-all: true, filter: "(?i)台|新北|彰化|TW|Taiwan"}
-  - {name: 🚀 GitHub, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/GitHub.png"}
+  - {name: 🚀 GitHub, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/GitHub.png"}
   - {name: 🌐 社交媒体, <<: *pr}
-  - {name: 📢 谷歌FCM, <<: *pr}
-  - {name: 🇬 谷歌服务, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Google.png"}
-  - {name: 📹 YouTube, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/YouTube.png"}
+  - {name: 🇬 谷歌服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png"}
+  - {name: 📹 YouTube, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/YouTube.png"}
   - {name: 🎮 游戏平台, <<: *pr}
-  - {name: 🎮 Steam, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Steam.png"}
+  - {name: 🎮 Steam, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Steam.png"}
   - {name: 💬 即时通讯, <<: *pr}
-  - {name: 🎶 TikTok, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Douyin.png"}
+  - {name: 🎶 TikTok, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png"}
   - {name: 🛒 国外电商, <<: *pr}
-  - {name: 🎻 Spotify, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Spotify.png"}
+  - {name: 🎻 Spotify, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png"}
   - {name: 🎮 プロセか, <<: *pr}
   - {name: 🎥 ABEMA, type: select, include-all: true, proxies: [🚀 手动选择, 🎯 全球直连, 🇯🇵 日本节点, 🇯🇵 日本手动, 🚀 手动节点], filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
   - {name: 🐟 漏网之鱼, <<: *pr}
   - {name: 🎥 流媒体, <<: *pr}
   - {name: 🌎 国外媒体, <<: *pr}
   - {name: 🤖 AI服务, type: select, include-all: true, exclude-filter: "牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐"}
-  - {name: 📺 Bahamut, type: select, proxies: [🚀 手动选择, 🎯 全球直连, 🇹🇼 台湾节点, 🇹🇼 台湾手动, 🚀 手动节点], icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Bahamut.png"}
-  - {name: 🚀 测速工具, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/SpeedTest.png"}
-  - {name: 🤖 Copilot, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Bing.png"}
-  - {name: 🍎 苹果服务, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Apple.png"}
-  - {name: Ⓜ️ 微软服务, <<: *pr, icon: "https://github.com/Vbaethon/HOMOMIX/blob/main/Icon/Color/Microsoft.png"}
+  - {name: 📺 Bahamut, type: select, proxies: [🚀 手动选择, 🎯 全球直连, 🇹🇼 台湾节点, 🇹🇼 台湾手动, 🚀 手动节点], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Bahamut.png"}
+  - {name: 🚀 测速工具, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/SpeedTest.png"}
+  - {name: 🤖 Copilot, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft_Copilot.png"}
+  - {name: 🍎 苹果服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple.png"}
+  - {name: Ⓜ️ 微软服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png"}
   - {name: 🇭🇰 香港节点, type: fallback, interval: 60, lazy: false, proxies: [🇭🇰 香港手动, 🇭🇰 香港智选]}
   - {name: 🇯🇵 日本节点, type: fallback, interval: 60, lazy: false, proxies: [🇯🇵 日本手动, 🇯🇵 日本智选]}
   - {name: 🇺🇸 美国节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约"}
   - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
   - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)台|新北|彰化|TW|Taiwan"}
-  - {name: 🕊️ 便宜节点, type: select, include-all: true, filter: "(?i)0.5|0.5倍|0.5x|0.1|0.2|0.3|0.4|0.6|0.7|0.8|0.9"}
+  - {name: 🕊️ 便宜节点, type: select, include-all: true, filter: "(?i)0.5|0.5倍|0.5x|0.1|0.2|0.3|0.4|0.6|0.7|0.8|0.9", exclude-filter: "流量|剩余"}
   - {name: 🌐 其他地区, type: select, include-all: true, exclude-filter: "香港|HK|Hong Kong|🇭🇰|HongKong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|台|新北|彰化|TW|Taiwan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约|牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐"}
   - {name: 🚀 手动节点, type: select, include-all: true}
   - {name: 🇯🇵 日本智选, type: smart, include-all: true, collectdata: true, hidden: true, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
@@ -176,7 +174,7 @@ rules:
   - GEOSITE,apple-tvplus,🎥 流媒体
   - GEOSITE,apple,🍎 苹果服务
   - GEOSITE,microsoft,Ⓜ️ 微软服务
-  - GEOSITE,googlefcm,📢 谷歌FCM
+  - GEOSITE,googlefcm,🇬 谷歌服务
   - GEOSITE,google,🇬 谷歌服务
   - GEOSITE,tiktok,🎶 TikTok
   - RULE-SET,ABEMA,🎥 ABEMA
@@ -198,7 +196,7 @@ rules:
   - GEOIP,google,🇬 谷歌服务,no-resolve
   - GEOIP,netflix,🎥 流媒体,no-resolve
   - GEOSITE,cn,🎯 全球直连
-  - GEOIP,cn,🎯 全球直连,no-resolve
+  - GEOIP,cn,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 
 
