@@ -8,7 +8,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: Direct
+    proxy: 直连
     override:
       udp: true
   STT:
@@ -19,14 +19,25 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: Direct
+    proxy: 直连
+    override:
+      udp: true
+  IBCN:
+    url: "https://sub.krsd.xyz/link/TxUQhnYDbF495UkH?clash=1"
+    type: http
+    interval: 43200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
     override:
       udp: true
   
 
 # 节点信息
 proxies:
-  - {name: Direct, type: direct}
+  - {name: 直连, type: direct}
   - {name: 🇯🇵 日本自用, server: 191.96.29.223, port: 46058, type: vless, uuid: 42ba204f-734c-4ce9-bc5a-10d5b0002623, tls: true, flow: xtls-rprx-vision, skip-cert-verify: true, reality-opts: {public-key: UtL7E0Gmxj3X5JdcPAutpTRKo7K2hugkR0vwk2XroUM}, servername: gen-media.co.jp, client-fingerprint: chrome, network: tcp, udp: true}
  
 
@@ -111,44 +122,44 @@ dns:
 # 出站策略
 pr: &pr {type: select, proxies: [🚀 手动选择, 🎯 全球直连, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇭🇰 香港手动, 🇯🇵 日本手动, 🇺🇸 美国手动, 🇸🇬 新加坡手动, 🇹🇼 台湾手动, 🌐 其他地区, 🚀 手动节点, 🕊️ 便宜节点]}
 proxy-groups:
-  - {name: 🚀 手动选择, type: select, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇭🇰 香港手动, 🇯🇵 日本手动, 🇺🇸 美国手动, 🇸🇬 新加坡手动, 🇹🇼 台湾手动, 🌐 其他地区, 🚀 手动节点, 🕊️ 便宜节点]}
-  - {name: 🇭🇰 香港手动, type: select, include-all: true, filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong|深港"}
-  - {name: 🇯🇵 日本手动, type: select, include-all: true, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
-  - {name: 🇺🇸 美国手动, type: select, include-all: true, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约"}
-  - {name: 🇸🇬 新加坡手动, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
-  - {name: 🇹🇼 台湾手动, type: select, include-all: true, filter: "(?i)台|新北|彰化|TW|Taiwan"}
+  - {name: 🚀 手动选择, type: select, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇭🇰 香港手动, 🇯🇵 日本手动, 🇺🇸 美国手动, 🇸🇬 新加坡手动, 🇹🇼 台湾手动, 🌐 其他地区, 🚀 手动节点, 🕊️ 便宜节点], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Flight.png"}
+  - {name: 🇭🇰 香港手动, type: select, include-all: true, filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong|深港", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png"}
+  - {name: 🇯🇵 日本手动, type: select, include-all: true, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Japan.png"}
+  - {name: 🇺🇸 美国手动, type: select, include-all: true, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/USA.png"}
+  - {name: 🇸🇬 新加坡手动, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Singapore.png"}
+  - {name: 🇹🇼 台湾手动, type: select, include-all: true, filter: "(?i)台|新北|彰化|TW|Taiwan", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Taiwan_Province.png"}
   - {name: 🚀 GitHub, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/GitHub.png"}
   - {name: 🌐 社交媒体, <<: *pr}
   - {name: 🇬 谷歌服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png"}
   - {name: 📹 YouTube, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/YouTube.png"}
-  - {name: 🎮 游戏平台, <<: *pr}
+  - {name: 🎮 游戏平台, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Game.png"}
   - {name: 🎮 Steam, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Steam.png"}
   - {name: 💬 即时通讯, <<: *pr}
   - {name: 🎶 TikTok, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png"}
-  - {name: 🛒 国外电商, <<: *pr}
-  - {name: 🎻 Spotify, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png"}
   - {name: 🎮 プロセか, <<: *pr}
   - {name: 🎥 ABEMA, type: select, include-all: true, proxies: [🚀 手动选择, 🎯 全球直连, 🇯🇵 日本节点, 🇯🇵 日本手动, 🚀 手动节点], filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
-  - {name: 🐟 漏网之鱼, <<: *pr}
-  - {name: 🎥 流媒体, <<: *pr}
+  - {name: 🤖 AI服务, type: select, include-all: true, exclude-filter: "牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AI.png"}
+  - {name: 🐟 漏网之鱼, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Globefish.png"}
+  - {name: 🛒 国外电商, <<: *pr}
+  - {name: 🎻 Spotify, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png"}
+  - {name: 🎥 流媒体, type: select, include-all: true, exclude-filter: "牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐",  proxies: [🚀 手动选择, 🎯 全球直连, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇭🇰 香港手动, 🇯🇵 日本手动, 🇺🇸 美国手动, 🇸🇬 新加坡手动, 🇹🇼 台湾手动, 🌐 其他地区, 🚀 手动节点, 🕊️ 便宜节点]}
   - {name: 🌎 国外媒体, <<: *pr}
-  - {name: 🤖 AI服务, type: select, include-all: true, exclude-filter: "牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐"}
   - {name: 📺 Bahamut, type: select, proxies: [🚀 手动选择, 🎯 全球直连, 🇹🇼 台湾节点, 🇹🇼 台湾手动, 🚀 手动节点], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Bahamut.png"}
   - {name: 🚀 测速工具, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/SpeedTest.png"}
   - {name: 🤖 Copilot, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft_Copilot.png"}
   - {name: 🍎 苹果服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple.png"}
   - {name: Ⓜ️ 微软服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png"}
-  - {name: 🇭🇰 香港节点, type: fallback, interval: 60, lazy: false, proxies: [🇭🇰 香港手动, 🇭🇰 香港智选]}
-  - {name: 🇯🇵 日本节点, type: fallback, interval: 60, lazy: false, proxies: [🇯🇵 日本手动, 🇯🇵 日本智选]}
-  - {name: 🇺🇸 美国节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约"}
-  - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
-  - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)台|新北|彰化|TW|Taiwan"}
-  - {name: 🕊️ 便宜节点, type: select, include-all: true, filter: "(?i)0.5|0.5倍|0.5x|0.1|0.2|0.3|0.4|0.6|0.7|0.8|0.9", exclude-filter: "流量|剩余"}
-  - {name: 🌐 其他地区, type: select, include-all: true, exclude-filter: "香港|HK|Hong Kong|🇭🇰|HongKong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|台|新北|彰化|TW|Taiwan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约|牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐"}
-  - {name: 🚀 手动节点, type: select, include-all: true}
+  - {name: 🇭🇰 香港节点, type: fallback, interval: 60, lazy: false, proxies: [🇭🇰 香港手动, 🇭🇰 香港智选], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png"}
+  - {name: 🇯🇵 日本节点, type: fallback, interval: 60, lazy: false, proxies: [🇯🇵 日本手动, 🇯🇵 日本智选], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Japan.png"}
+  - {name: 🇺🇸 美国节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/USA.png"}
+  - {name: 🇸🇬 新加坡节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)新加坡|坡|狮城|SG|Singapore", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Singapore.png"}
+  - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 50, interval: 120, filter: "(?i)台|新北|彰化|TW|Taiwan", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Taiwan_Province.png"}
+  - {name: 🕊️ 便宜节点, type: select, include-all: true, filter: "(?i)0.5|0.5倍|0.5x|0.1|0.2|0.3|0.4|0.6|0.7|0.8|0.9|免费|公益", exclude-filter: "流量|剩余"}
+  - {name: 🌐 其他地区, type: select, include-all: true, exclude-filter: "香港|HK|Hong Kong|🇭🇰|HongKong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|台|新北|彰化|TW|Taiwan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|纽约|牢记|域名|更新|消耗|重置|刷新|电报|剩余|流量|机场|.com|官网|套餐", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Other.png"}
+  - {name: 🚀 手动节点, type: select, include-all: true, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Flight.png"}
   - {name: 🇯🇵 日本智选, type: smart, include-all: true, collectdata: true, hidden: true, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵"}
   - {name: 🇭🇰 香港智选, type: smart, include-all: true, collectdata: true, hidden: true, filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong|深港"}
-  - {name: 🎯 全球直连, type: select, proxies: [Direct], hidden: true}
+  - {name: 🎯 全球直连, type: select, proxies: [直连], hidden: true}
 
 # 规则匹配
 rules:
@@ -196,7 +207,7 @@ rules:
   - GEOIP,google,🇬 谷歌服务,no-resolve
   - GEOIP,netflix,🎥 流媒体,no-resolve
   - GEOSITE,cn,🎯 全球直连
-  - GEOIP,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
 
 
