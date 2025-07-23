@@ -1,9 +1,10 @@
+;TOTAL: 5
 ;公主连结box
-DOMAIN,satroki.tech
+DOMAIN-SUFFIX,satroki.tech
 ;飞速讯科技
-DOMAIN,www.feisuxun.com
+DOMAIN-SUFFIX,www.feisuxun.com
 ;坐着火车去旅行
-DOMAIN,www.skyend.work
+DOMAIN-SUFFIX,www.skyend.work
 ;赛马娘千叶助手
-DOMAIN,91shenfan.com
+DOMAIN-SUFFIX,91shenfan.com
 DOMAIN-KEYWORD,bc.googleusercontent
