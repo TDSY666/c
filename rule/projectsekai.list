@@ -1,4 +1,4 @@
-;TOTAL: 14
+;TOTAL: 16
 ;台服
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,bytegsdk.com
@@ -15,3 +15,5 @@ DOMAIN-SUFFIX,inner-active.mobi
 DOMAIN-SUFFIX,colorfulpalette.org
 DOMAIN,cdp.cloud.unity3d.com
 DOMAIN,ad2.fivecdm.com
+DOMAIN,skadnetworks.fyber.com
+DOMAIN,bc2.fivecdm.com
