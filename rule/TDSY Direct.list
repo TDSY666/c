@@ -1,4 +1,4 @@
-;TOTAL: 5
+;TOTAL: 6
 ;公主连结box
 DOMAIN-SUFFIX,satroki.tech
 ;飞速讯科技
@@ -7,4 +7,6 @@ DOMAIN-SUFFIX,feisuxun.com
 DOMAIN-SUFFIX,skyend.work
 ;赛马娘千叶助手
 DOMAIN-SUFFIX,91shenfan.com
+;方糖推送
+DOMAIN-SUFFIX,ftqq.com
 DOMAIN-KEYWORD,bc.googleusercontent
