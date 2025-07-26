@@ -8,7 +8,7 @@ payload:
   - +.bytedgame.com
   - +.isnssdk.com
   - +.appsflyersdk.com
-  - *.config.uca.cloud.unity3d.com
+  - "*.config.uca.cloud.unity3d.com"
 
   # 日服
   - +.sekai.colorfulpalette.org
@@ -18,7 +18,7 @@ payload:
   - +.inner-active.mobi
   - +.colorfulpalette.org
   - +.colorfulpalette.net
-  - *.cdp.cloud.unity3d.com
-  - *.ad2.fivecdm.com
-  - *.skadnetworks.fyber.com
-  - *.bc2.fivecdm.com
+  - "*.cdp.cloud.unity3d.com"
+  - "*.ad2.fivecdm.com"
+  - "*.skadnetworks.fyber.com"
+  - "*.bc2.fivecdm.com"

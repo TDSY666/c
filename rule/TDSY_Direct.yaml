@@ -1,5 +1,6 @@
 payload:
-  # ;TOTAL: 7
+  #TOTAL: 7
+
   # 国内IP 应该直连
   - +.satroki.tech      # 公主连结box
   - +.feisuxun.com      # 飞速讯科技
