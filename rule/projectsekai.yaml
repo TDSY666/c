@@ -1,0 +1,24 @@
+payload:
+  # TOTAL: 18
+  
+  # 台服
+  - +.ibytedtos.com
+  - +.bytegsdk.com
+  - +.applovin.com
+  - +.bytedgame.com
+  - +.isnssdk.com
+  - +.appsflyersdk.com
+  - *.config.uca.cloud.unity3d.com
+
+  # 日服
+  - +.sekai.colorfulpalette.org
+  - +.i18n-pglstatp.com
+  - +.pangle.io
+  - +.sgsnssdk.com
+  - +.inner-active.mobi
+  - +.colorfulpalette.org
+  - +.colorfulpalette.net
+  - *.cdp.cloud.unity3d.com
+  - *.ad2.fivecdm.com
+  - *.skadnetworks.fyber.com
+  - *.bc2.fivecdm.com
