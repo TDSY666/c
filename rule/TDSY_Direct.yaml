@@ -1,11 +1,13 @@
 payload:
-  #TOTAL: 7
+  #TOTAL: 9
 
   # 国内IP 应该直连
   - +.satroki.tech      # 公主连结box
   - +.feisuxun.com      # 飞速讯科技
   - +.skyend.work       # 坐着火车去旅行
   - +.91shenfan.com     # 赛马娘千叶助手
+  - +.25mao.com         # 老牌猫源
+  - +.ft07.com          # 方糖推送
 
   # 国外IP 可以直连
   - +.ftqq.com          # 方糖推送
