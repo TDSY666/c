@@ -1,0 +1,11 @@
+payload:
+  # 国内IP 应该直连
+  - +.satroki.tech      # 公主连结box
+  - +.feisuxun.com      # 飞速讯科技
+  - +.skyend.work       # 坐着火车去旅行
+  - +.91shenfan.com     # 赛马娘千叶助手
+
+  # 国外IP 可以直连
+  - +.ftqq.com          # 方糖推送
+  - +.nvidia.com        # N卡官网
+  - +.bc.googleusercontent.com  # 世界计划匹配
