@@ -1,11 +1,10 @@
 payload:
-  #TOTAL: 3
+  #TOTAL: 4
 
   # 国内IP 应该直连
-
-  # 国外IP 可以直连
-  - +.ftqq.com          # 方糖推送
-  - +.nvidia.com        # N卡官网
-  - +.bc.googleusercontent.com  # 世界计划匹配
   - +.kuyoutajiexin.com  #百山直播
-
+  
+  # 国外IP 可以直连
+  - +.ftqq.com  # 方糖推送
+  - +.nvidia.com  # N卡官网
+  - +.bc.googleusercontent.com  # 世界计划匹配
