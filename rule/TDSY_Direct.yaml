@@ -1,10 +1,12 @@
 payload:
-  #TOTAL: 4
+  #TOTAL: 5
 
   # 国内IP 应该直连
   - +.kuyoutajiexin.com  #百山直播
+  - +.csbore.com  #csbore
   
   # 国外IP 可以直连
   - +.ftqq.com  # 方糖推送
   - +.nvidia.com  # N卡官网
   - +.bc.googleusercontent.com  # 世界计划匹配
+
