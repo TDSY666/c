@@ -1,9 +1,0 @@
-payload:
-  #TOTAL: 5
-
-  # 强制代理，防止DNS泄漏
-  - +.ffq.la     
-  - +.ffqla.com
-  - +.qiangup.com
-  - +.ffqla.net
-  - +.aijichang.com
