@@ -4,4 +4,4 @@ payload:
   # 常用国外加密DNS
 
   - +.cloudflare-dns.com
-  - +.dns.google.com
+  - dns.google.com
