@@ -1,9 +1,6 @@
 payload:
-  #TOTAL: 4
+  #TOTAL: 3
 
-  # 国内IP 应该直连
-  - +.kuyoutajiexin.com  #百山直播
-  
   # 国外IP 可以直连
   - +.ftqq.com  # 方糖推送
   - +.nvidia.com  # N卡官网
