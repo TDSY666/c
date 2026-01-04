@@ -1,5 +1,5 @@
 payload:
-  # TOTAL: 18
+  # TOTAL: 16
   
   # 台服
   - +.ibytedtos.com
@@ -12,8 +12,6 @@ payload:
 
   # 日服
   - +.sekai.colorfulpalette.org
-  - +.i18n-pglstatp.com
-  - +.pangle.io
   - +.sgsnssdk.com
   - +.inner-active.mobi
   - +.colorfulpalette.org
