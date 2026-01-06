@@ -1,0 +1,166 @@
+# 机场订阅
+proxy-providers:
+  自用节点:
+    url: "http://127.0.0.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/%E8%87%AA%E7%94%A8%E6%9C%BA%E5%9C%BA?target=ClashMeta"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      proxy: Direct
+    override:
+      udp: true 
+    exclude-filter: "套餐|到期|有效|剩余|版本|已用|过期|失联|测试|官方|网址|备用|群|TEST|客服|网站|获取|订阅|流量|机场|下次|官址|联系|邮箱|工单|学术|USE|USED|TOTAL|EXPIRE|EMAIL|刷新|官网"
+  
+# 节点信息
+proxies:
+  - {name: Direct, type: direct}
+  - {name: 智选节点, server: 191.96.29.223, port: 1, type: vless, uuid: 1, udp: true}
+
+# DNS模块
+dns:
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  proxy-server-nameserver:
+    - https://223.5.5.5/dns-query
+  nameserver-policy:
+    "geosite:cn":
+      - 127.0.0.1:5555
+  direct-nameserver:
+    - 127.0.0.1:5555
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+
+# 出站策略
+pr: &pr {type: select, proxies: [手动选择, 🎯 全球直连, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🌐 其他地区, 🕊️ 便宜节点]}
+proxy-groups:
+  - {name: 手动选择, type: select, include-all: true, exclude-filter: "智选节点|Direct", proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🌐 其他地区, 🕊️ 便宜节点], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Flight.png"}
+  - {name: 🇭🇰 香港手动, type: select, include-all: true, filter: "(?i)香港|HK|智选节点"}
+  - {name: 🇯🇵 日本手动, type: select, include-all: true, filter: "(?i)日本|JP|智选节点"}
+  - {name: 🇺🇸 美国手动, type: select, include-all: true, filter: "(?i)美国|US|智选节点"}
+  - {name: 🇸🇬 新加坡手动, type: select, include-all: true, filter: "(?i)新加坡|SG|智选节点"}
+  - {name: 🇹🇼 台湾手动, type: select, include-all: true, filter: "(?i)台湾|TW|智选节点"}
+  - {name: GitHub, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/GitHub.png"}
+  - {name: 社交媒体, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/personal_icon/social_media.svg"}
+  - {name: 谷歌服务, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png"}
+  - {name: YouTube, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/YouTube.png"}
+  - {name: 游戏平台, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Game.png"}
+  - {name: Steam, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Steam.png"}
+  - {name: 即时通讯, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/personal_icon/instant_messaging.svg"}
+  - {name: TikTok, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png"}
+  - {name: プロセか, <<: *pr, icon: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/personal_icon/miku.svg"}
+  - {name: 国外电商, <<: *pr, icon: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/personal_icon/e_commerce_platform.svg"}
+  - {name: Spotify, <<: *pr, exclude-filter: "🎯 全球直连", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png"}
+  - {name: ABEMA, type: select, include-all: true, proxies: [手动选择,  🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🌐 其他地区, 🕊️ 便宜节点], exclude-filter: "Direct|智选节点", icon: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/personal_icon/abema.svg"}
+  - {name: AI服务, type: select, include-all: true, proxies: [手动选择,  🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🌐 其他地区, 🕊️ 便宜节点], exclude-filter: "Direct|智选节点", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AI.png"}
+  - {name: 流媒体, type: select, include-all: true,  proxies: [手动选择, 🎯 全球直连, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🌐 其他地区, 🕊️ 便宜节点], exclude-filter: "Direct|智选节点", icon: "https://raw.githubusercontent.com/TDSY666/c/refs/heads/main/personal_icon/streaming_media.svg"}
+  - {name: 测速工具, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/SpeedTest.png"}
+  - {name: Copilot, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft_Copilot.png"}
+  - {name: 苹果服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple.png"}
+  - {name: 微软服务, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png"}
+  - {name: 漏网之鱼, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Globefish.png"}
+  - {name: 🇭🇰 香港节点, type: fallback, interval: 60, lazy: false, hidden: true, proxies: [🇭🇰 香港手动, 🇭🇰 香港智选]}
+  - {name: 🇯🇵 日本节点, type: fallback, interval: 60, lazy: false, hidden: true, proxies: [🇯🇵 日本手动, 🇯🇵 日本智选]}
+  - {name: 🇺🇸 美国节点, type: fallback, interval: 60, lazy: false, hidden: true, proxies: [🇺🇸 美国手动, 🇺🇸 美国智选]}
+  - {name: 🇸🇬 新加坡节点, type: fallback, interval: 60, lazy: false, hidden: true, proxies: [🇸🇬 新加坡手动, 🇸🇬 新加坡智选]}
+  - {name: 🇹🇼 台湾节点, type: fallback, interval: 60, lazy: false, hidden: true, proxies: [🇹🇼 台湾手动, 🇹🇼 台湾智选]}
+  - {name: 🕊️ 便宜节点, type: select, include-all: true, filter: "(?i)0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|免费|公益"}
+  - {name: 🌐 其他地区, type: select, include-all: true, exclude-filter: "Direct|智选节点|香港|HK|日本|JP|美国|US|台湾|TW|新加坡|SG"}
+  - {name: 🔀 非标端口直连, type: select, proxies: [✅ 开启, ❌ 关闭]}
+  - {name: 🇭🇰 香港智选, type: smart, include-all: true, collectdata: false, uselightgbm: true, hidden: true, filter: "(?i)香港|HK", policy-priority: "良心云:1.5"}
+  - {name: 🇯🇵 日本智选, type: smart, include-all: true, collectdata: false, uselightgbm: true, hidden: true, filter: "(?i)日本|JP", policy-priority: "良心云:1.5"}
+  - {name: 🇺🇸 美国智选, type: smart, include-all: true, collectdata: false, uselightgbm: true, hidden: true, filter: "(?i)美国|US", policy-priority: "良心云:1.5"}
+  - {name: 🇸🇬 新加坡智选, type: smart, include-all: true, collectdata: false, uselightgbm: true, hidden: true, filter: "(?i)新加坡|SG", policy-priority: "良心云:1.5"}
+  - {name: 🇹🇼 台湾智选, type: smart, include-all: true, collectdata: false, uselightgbm: true, hidden: true, filter: "(?i)台湾|TW", policy-priority: "良心云:1.5"}
+  - {name: ✅ 开启, type: select, proxies: [Direct], hidden: true}
+  - {name: ❌ 关闭, type: select, proxies: [漏网之鱼], hidden: true}
+  - {name: 🎯 全球直连, type: select, proxies: [Direct], hidden: true}
+
+# 规则匹配
+rules:
+  - RULE-SET,TDSY_Direct,🎯 全球直连
+  - RULE-SET,projectsekai,プロセか
+  - RULE-SET,private,🎯 全球直连
+  - RULE-SET,private_ip,🎯 全球直连,no-resolve
+  - RULE-SET,DNS,手动选择
+  - RULE-SET,Custom_Proxy,手动选择
+  - RULE-SET,google-cn,🎯 全球直连
+  - RULE-SET,category-games@cn,🎯 全球直连
+  - RULE-SET,Steam_CDN,🎯 全球直连
+  - RULE-SET,category-game-platforms-download,🎯 全球直连
+  - RULE-SET,category-public-tracker,🎯 全球直连
+  - RULE-SET,category-communication,即时通讯
+  - RULE-SET,category-social-media-!cn,社交媒体
+  - RULE-SET,bing,Copilot
+  - RULE-SET,category-ai-!cn,AI服务
+  - RULE-SET,github,GitHub
+  - RULE-SET,category-speedtest,测速工具
+  - RULE-SET,steam,Steam
+  - RULE-SET,youtube,YouTube
+  - RULE-SET,apple-tvplus,流媒体
+  - RULE-SET,apple,苹果服务
+  - RULE-SET,microsoft,微软服务
+  - RULE-SET,google,谷歌服务
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,abema,ABEMA
+  - RULE-SET,spotify,Spotify
+  - RULE-SET,category-games,游戏平台
+  - RULE-SET,category-entertainment,流媒体
+  - RULE-SET,category-ecommerce,国外电商
+  - RULE-SET,telegram_ip,即时通讯,no-resolve
+  - RULE-SET,twitter_ip,社交媒体,no-resolve
+  - RULE-SET,facebook_ip,社交媒体,no-resolve
+  - RULE-SET,google_ip,谷歌服务,no-resolve
+  - RULE-SET,netflix_ip,流媒体,no-resolve
+  - RULE-SET,gfw,手动选择
+  - GEOSITE,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连
+  - RULE-SET,Custom_Port,🔀 非标端口直连
+  - MATCH,漏网之鱼
+
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain_mrs: &domain_mrs {type: http, interval: 86400, behavior: domain, format: mrs}
+  domain_yaml: &domain_yaml {type: http, interval: 86400, behavior: domain, format: yaml}
+  class_test: &class_test {type: http, interval: 86400, behavior: classical, format: text}
+  class_yaml: &class_yaml {type: http, interval: 86400, behavior: classical, format: yaml}
+rule-providers:
+  TDSY_Direct: { <<: *domain_yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/TDSY666/c/refs/heads/main/rule/TDSY_Direct.yaml" }
+  projectsekai: { <<: *domain_yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/TDSY666/c/refs/heads/main/rule/projectsekai.yaml" }
+  Custom_Proxy: { <<: *class_yaml, url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Classical.yaml" }
+  Steam_CDN: { <<: *class_yaml, url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Classical.yaml" }
+  Custom_Port: { <<: *class_yaml, url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml" }
+  DNS: { <<: *domain_yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/TDSY666/c/refs/heads/main/rule/DNS.yaml" }
+  private: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geosite/private.mrs"}
+  private_ip: { <<: *ip, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/private.mrs"}
+  google-cn: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google-cn.mrs"}
+  category-games@cn: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-games@cn.mrs"}
+  category-game-platforms-download: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-game-platforms-download.mrs"}
+  category-public-tracker: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-public-tracker.mrs"}
+  category-communication: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-communication.mrs"}
+  category-social-media-!cn: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-social-media-!cn.mrs"}
+  bing: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bing.mrs"}
+  category-ai-!cn: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+  github: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/github.mrs"}
+  category-speedtest: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-speedtest.mrs"}
+  steam: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/steam.mrs"}
+  youtube: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs"}
+  apple: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple.mrs"}
+  apple-tvplus: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple-tvplus.mrs"}
+  microsoft: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs"}
+  google: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs"}
+  tiktok: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tiktok.mrs"}
+  abema: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/abema.mrs"}
+  spotify: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs"}
+  category-games: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-games.mrs"}
+  category-entertainment: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-entertainment.mrs"}
+  category-ecommerce: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ecommerce.mrs"}
+  telegram_ip: { <<: *ip, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/telegram.mrs"}
+  twitter_ip: { <<: *ip, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/twitter.mrs"}
+  facebook_ip: { <<: *ip, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/facebook.mrs"}
+  google_ip: { <<: *ip, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/google.mrs"}
+  netflix_ip: { <<: *ip, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/netflix.mrs"}
+  gfw: { <<: *domain_mrs, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/gfw.mrs"}  
