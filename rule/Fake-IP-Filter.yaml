@@ -1,0 +1,116 @@
+payload:
+# LAN & Local Services
+  - +.lan
+  - +.localdomain
+  - +.example
+  - +.invalid
+  - +.localhost
+  - +.test
+  - +.local
+  - +.home.arpa
+  - +.direct
+  - +.cable.auth.com
+  - +.network-test.debian.org
+  - +.detectportal.firefox.com
+  - +.resolver1.opendns.com
+  - +.global.turn.twilio.com
+  - +.global.stun.twilio.com
+  - +.app.yinxiang.com
+  - +.injections.adguard.org
+  - +.localhost.weixin.qq.com
+  - +.blzstatic.cn
+  - +.cmpassport.com
+  - +.id6.me
+  - +.open.e.189.cn
+  - +.opencloud.wostore.cn
+  - +.id.mail.wo.cn
+  - +.mdn.open.wo.cn
+  - +.hmrz.wo.cn
+  - +.nishub1.10010.com
+  - +.enrichgw.10010.com
+  - +.wosms.cn
+  - +.jegotrip.com.cn
+  - +.icitymobile.mobi
+  - +.pingan.com.cn
+  - +.cmbchina.com
+  - +.10099.com.cn
+  - +.microdone.cn
+  - +.msdcs
+
+# NTP Services
+  - +.time.com
+  - +.time.gov
+  - +.time.edu.cn
+  - +.apple.com
+  - +.ntp.org.cn
+  - +.pool.ntp.org
+  - +.cloud.tencent.com
+  - +.ntp.com
+
+# Music Services (NetEase, Taihe, Kugou, Kuwo, Joox, QQ, Xiami, Migu)
+  - +.music.163.com
+  - +.126.net
+  - +.musicapi.taihe.com
+  - +.music.taihe.com
+  - +.songsearch.kugou.com
+  - +.trackercdn.kugou.com
+  - +.kuwo.cn
+  - +.api-jooxtt.sanook.com
+  - +.api.joox.com
+  - +.joox.com
+  - +.y.qq.com
+  - +.music.tc.qq.com
+  - +.stream.qqmusic.qq.com
+  - +.aqqmusic.tc.qq.com
+  - +.xiami.com
+  - +.music.migu.cn
+
+# System & Login (Windows, QQ)
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - +.ptlogin2.qq.com
+  - +.sec.qq.com
+  - +.qq.com
+  - +.tencent.com
+
+# Games (Nintendo, PS, Xbox, Battle.net, Wargaming, FFXIV)
+  - +.srv.nintendo.net
+  - +.cdn.nintendo.net
+  - +.stun.playstation.net
+  - +.xboxlive.com
+  - +.microsoft.com
+  - +.battle.net
+  - +.battlenet.com.cn
+  - +.wotgame.cn
+  - +.wggames.cn
+  - +.wowsgame.cn
+  - +.wargaming.net
+  - +.square-enix.com
+  - +.finalfantasyxiv.com
+  - +.ffxiv.com
+  - +.ff14.sdo.com
+  - +.dorado.sdo.com
+
+# Infrastructure & Tools (Golang, STUN, Router Brands, AdGuard, Xunlei)
+  - +.proxy.golang.org
+  - +.stun
+  - +.belkin.com
+  - +.linksys.com
+  - +.linksyssmartwifi.com
+  - +.router.asus.com
+  - +.adguard.org
+  - +.sandai.net
+  - +.n0808.com
+  - +.uu.163.com
+  - +.res.netease.com
+
+# Streaming & Others (Google, Netflix, Bilibili, Disney+, etc.)
+  - +.lens.l.google.com
+  - +.stun.l.google.com
+  - +.g-tun.com
+  - +.nflxvideo.net
+  - +.mcdn.bilivideo.cn
+  - +.media.dssott.com
+  - +.shark007.net
+  - +.cmbimg.com
+  - +.pub.3gppnetwork.org
