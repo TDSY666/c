@@ -1,8 +1,5 @@
 payload:
-  #TOTAL: 2
+  #TOTAL: 1
 
   # 常用国外加密DNS
-
-  - +.cloudflare-dns.com
-  - dns.google
-
+  - +.cloudflare-dns.com   
