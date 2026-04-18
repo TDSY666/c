@@ -1,4 +1,5 @@
 payload:
-  #TOTAL: 1
+  #TOTAL: 2
 
   - +.bc.googleusercontent.com  # 世界计划匹配
+  - +.download.nvidia.com       # N卡驱动下载
